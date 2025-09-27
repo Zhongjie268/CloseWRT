@@ -13,7 +13,7 @@ echo "删除DDNS示例!"
 
 CFG_FILE="./package/base-files/files/bin/config_generate"
 #修改默认IP地址
-sed -i "s/192\.168\.[0-9]*\.[0-9]*/$WRT_IP/g" $CFG_FILE
+sed -i "s/192\.168\.[0-9]*\.[0-9]*/192.168.6.1/g" $CFG_FILE
 #修改默认主机名
 sed -i "s/hostname='.*'/hostname='$WRT_NAME'/g" $CFG_FILE
 #修改默认时区
@@ -38,9 +38,9 @@ fi
 #修改默认WIFI名
 #mtwifi-cfg
 WIFI_FILE="./package/mtk/applications/mtwifi-cfg/files/mtwifi.sh"
-sed -i "s/ssid=\"ImmortalWrt-2.4G\"/ssid=\"$WRT_WIFI\"/" $WIFI_FILE
+sed -i "s/ssid=\"666999\"/ssid=\"$WRT_WIFI\"/" $WIFI_FILE
 echo "已将 2.4G Wi-Fi 名称修改为: $WRT_WIFI"
-sed -i "s/ssid=\"ImmortalWrt-5G\"/ssid=\"$WRT_WIFI\_5G\"/" $WIFI_FILE
+sed -i "s/ssid=\"666999_\"/ssid=\"$WRT_WIFI\_5G\"/" $WIFI_FILE
 echo "已将 5G Wi-Fi 名称修改为: ${WRT_WIFI}_5G"
 #mtk
 sed -i "s/SSID1=MT7981_AX3000_2.4G/SSID1=$WRT_WIFI/" ./package/mtk/drivers/wifi-profile/files/mt7981/mt7981.dbdc.b0.dat
